@@ -409,10 +409,10 @@ GROUP BY g.Name;
 <summary> <code> #2 </code> </summary>
 
 ```sql
-SELECT Count(*), g.Name
-FROM Track t
-JOIN Genre g ON g.Name = "Pop"
-GROUP BY g.Name;
+SELECT Genre.Name, COUNT(*) AS Tracks FROM Track
+JOIN Genre
+ON Track.GenreId = Genre.GenreId
+WHERE Genre.Name =  "Pop" 
 ```
 
 </details>
